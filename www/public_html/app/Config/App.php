@@ -27,7 +27,7 @@ class App extends BaseConfig
     /*$root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
     $root.= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
     */
-    public $baseURL = 'http://localhost:8010/public_html/';
+    public $baseURL = 'http://localhost:8020/';
 
     /**
      * --------------------------------------------------------------------------

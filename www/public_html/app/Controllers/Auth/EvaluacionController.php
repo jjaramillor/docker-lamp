@@ -1,7 +1,6 @@
 <?php
 namespace App\Controllers\Auth;
 
-use CodeIgniter\CLI\Console;
 use CodeIgniter\Controller;
 use Config\Email;
 use Config\Services;
@@ -139,7 +138,7 @@ class EvaluacionController extends Controller
 			$get_id_alumno = trim($this->request->getPost('id_alumno'));
 			$perfil = trim($this->request->getPost('perfil'));
 			
-			
+
 
 				$filter1="";
 				$nombres_alumno="";				
@@ -167,8 +166,7 @@ class EvaluacionController extends Controller
 				}
 				else
 				{
-					$array_filter=['active'=>1,'id_colegio'=>$id_colegio,'seccion'=>$seccion];
-					$builder=$db->table('alumnos');
+					$array_filter=['active'=>1,'id_colegio'=>$id_colegio,'seccion'=>$seccion];$builder=$db->table('alumnos');
 					$total_alumns=$builder->select('id_alumno')->where($array_filter)->countAllResults();
 				}
 

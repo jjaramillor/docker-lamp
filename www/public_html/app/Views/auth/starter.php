@@ -153,7 +153,8 @@
         <div class="row shadow-sm bg-white p-3 mb-4">
             <div class='col-12'  style="<?= $style_acc; ?>" >
                 <select id="cmb_periodo" name="cmb_periodo" class="form-control">
-                   <option value="2022-2">2022-2</option>
+                   <!-- <option value="2022-2">2022-2</option> -->
+                   <?= $cmb_periodo  ?>
                 </select>
             </div>
             <?= $tr_add_table ?>
@@ -210,7 +211,9 @@
   <script>
     $(document).ready(function()
     {
-	<?php echo $data_perfil; ?>
+      
+	    <?php echo $data_perfil; ?>
+      var data_ugel = [];
       var data_ugel_colegio = [];
       var data_colegios = [];
       var colegio_det = {};
@@ -220,6 +223,28 @@
       var id_evaluacion = 0;
 
       <?php echo $data_script_col; ?>
+
+
+      $("#cmb_periodo").change(function() {    
+
+          $("#tbl_preguntas").html('');
+          $("#tbl_alumnos_exam").html("");
+        var html_colegios = "<option value=''>SELECCIONA UN COLEGIO</option>";
+        $("#cmb_colegio_local").html(html_colegios);
+        
+        var cmb_periodo = $("#cmb_periodo").val();
+        var html_ugels = <?php echo json_encode($cmb_ugel);  ?>;
+        $("#cmb_grado").empty();
+        $("#cmb_grado").html('');
+        $("#cmb_ugel").html('');
+
+        if (cmb_periodo != '') {
+          $("#cmb_ugel").html(html_ugels); 
+        }     
+
+
+      });
+
 
       $("#cmb_ugel").change(function() {
           $("#tbl_preguntas").html('');
@@ -414,7 +439,6 @@
           id_alumno='0';
         }
         var idcoleg = 0;
-        
         
 
         $("#tbl_alumnos_exam").html("");

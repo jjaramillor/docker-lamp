@@ -1,0 +1,6 @@
+public_html/writable/logs/*
+public_html/writable/session/*
+www/public_html/writable/session/*
+www/public_html/writable/logs/*
+www/public_html/vendor/*
+

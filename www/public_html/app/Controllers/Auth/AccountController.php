@@ -41,7 +41,7 @@ class AccountController extends Controller
 	 * Displays account settings.
 	 */
     public function genera_periodos() {
-        $periodos_gen=['2022-2','2022-1'];
+        $periodos_gen=['2023-2','2023-1','2022-2','2022-1'];
         return $periodos_gen;
     }
     public function validaAcceso($menu_valid,$session_acceso)
